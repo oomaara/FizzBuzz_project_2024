@@ -68,7 +68,7 @@ body {
 main {
     display: grid;
     gap: 10px;
-    padding: 200px 20px 20px; /* Adjusted top padding to avoid overlap */
+    padding: 200px 20px 20px;
 }
 
 /* Breakpoints for main content */
@@ -76,7 +76,7 @@ main {
     /* Phone screens */
     main {
         grid-template-columns: repeat(1, 1fr);
-        padding-top: 270px; /* Adjusted top padding to avoid overlap */
+        padding-top: 270px; 
     }
 }
 
@@ -84,7 +84,7 @@ main {
     /* Tablet screens */
     main {
         grid-template-columns: repeat(5, 1fr);
-        padding-top: 230px; /* Adjusted top padding to avoid overlap */
+        padding-top: 230px; 
     }
 }
 
@@ -92,7 +92,7 @@ main {
     /* Desktop screens */
     main {
         grid-template-columns: repeat(10, 1fr);
-        padding-top: 180px; /* Adjusted top padding to avoid overlap */
+        padding-top: 180px;
     }
 }
 
