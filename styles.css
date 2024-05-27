@@ -8,27 +8,92 @@ body {
 
 .controls {
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 20px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1000;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    z-index: 1000;
 }
 
 .controls label, .controls input, .controls button {
     margin: 5px;
+    box-sizing: border-box;
+}
+
+/* Responsive layout for controls */
+@media (max-width: 575px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        justify-content: wrap;
+        min-height: 300px;
+        justify-content: space-evenly;
+        display: flex;
+        width: 100%;
+        height: 80px;
+    
+    }
+    .controls label, .controls input, .controls button {
+        text-align: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .controls {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .controls label, .controls input, .controls button {
+        flex: 1 1 calc(50% - 20px);
+        margin: 5px;
+    }
+}
+
+@media (min-width: 992px) {
+    .controls {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .controls label, .controls input, .controls button {
+        flex: 1 1 auto;
+    }
 }
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 10px;
-    padding: 130px 20px 20px; /* Further increased top padding to avoid overlap */
+    padding: 200px 20px 20px; /* Adjusted top padding to avoid overlap */
+}
+
+/* Breakpoints for main content */
+@media (max-width: 575px) {
+    /* Phone screens */
+    main {
+        grid-template-columns: repeat(1, 1fr);
+        padding-top: 270px; /* Adjusted top padding to avoid overlap */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    /* Tablet screens */
+    main {
+        grid-template-columns: repeat(5, 1fr);
+        padding-top: 230px; /* Adjusted top padding to avoid overlap */
+    }
+}
+
+@media (min-width: 992px) {
+    /* Desktop screens */
+    main {
+        grid-template-columns: repeat(10, 1fr);
+        padding-top: 180px; /* Adjusted top padding to avoid overlap */
+    }
 }
 
 div {
